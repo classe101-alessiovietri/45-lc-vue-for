@@ -3,12 +3,51 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template HTML CSS JS</title>
+        <title>Vue For</title>
 
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+
+        <div id="app">
+            <h1>
+                {{ message }}
+            </h1>
+            <p>
+                {{ names }}
+            </p>
+
+            <ul>
+                <li v-for="ciccio in names">
+                    {{ ciccio }}
+                </li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li v-for="(ciccio, variabileIndice) in names">
+                    {{ variabileIndice }} - {{ ciccio }} - {{ names[variabileIndice] }}
+                </li>
+            </ul>
+            
+            <hr>
+
+            <ul>
+                <li v-for="i in 10">
+                    {{ i }}
+                </li>
+            </ul>
+
+            <div>
+                <input type="text" v-model="newName">
+                <button @click="addToNames()">
+                    Aggiungi
+                </button>
+            </div>
+        </div>
         
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="js/scripts.js" type="text/javascript"></script>
     </body>
 </html>
